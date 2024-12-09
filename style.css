@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-gap: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  background-color: red;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  background-color: yellow;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: green;
+}
+
+#hero {
+  background-color: orange;
+  height: 50vh;
+
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#gallery {
+  grid-template-columns: 1fr 1fr;
+  img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+  h2 {
+    grid-column: span 2;
+  }
+}
+
+section {
+  padding: var(--primary-gap);
+  display: grid;
+  gap: var(--primary-gap);
+}
+
+video,
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  /* display: block; */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 800px) {
+  #video {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  #gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    :nth-child(1 of img) {
+      grid-row: 2/4;
+      height: 100%;
+      object-position: left;
+    }
+    :nth-child(2 of img) {
+      grid-column: 2/4;
+      height: 100%;
+      aspect-ratio: 2/1;
+    }
+    :nth-child(3 of img) {
+      object-position: left;
+    }
+    :nth-child(4 of img) {
+      object-position: right;
+    }
+    h2 {
+      grid-column: span 3;
+    }
+  }
+}
